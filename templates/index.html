@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Home - My Portfolio{% endblock %}
+
+{% block content %}
+<section class="container py-5">
+  <div class="row align-items-center">
+    <div class="col-md-6 text-center text-md-start">
+      <h1 class="display-4 fw-bold">Hi, My name is Ari Freilich</h1>
+      <p class="lead">I’m a Python developer with a focus on building clean, maintainable solutions — from scripts to web apps.</p>
+      <a href="{{ url_for('show_projects') }}" class="btn btn-primary btn-lg mt-3">Check Out My Work</a>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="{{ url_for('static', filename='images/developer.jpeg') }}" class="img-fluid" alt="Coding Illustration">
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Projects - My Portfolio{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">My Projects</h2>
+<div class="row">
+    {% for project, info in data.items() %}
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">{{ project }}</h5>
+                <p class="card-text">{{ info['description'] }}</p>
+                <a href="{{ info['render_link'] }}" class="btn btn-outline-primary" target="_blank">Try it out</a>
+                <a href="{{ info['github_link'] }}" class="btn btn-outline-primary" target="_blank">View source code on GitHub</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
