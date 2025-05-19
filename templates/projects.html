@@ -3,19 +3,34 @@
 {% block title %}Projects - My Portfolio{% endblock %}
 
 {% block content %}
-<h2 class="mb-4">My Projects</h2>
-<div class="row">
+<h2 class="mb-5 text-center">My Projects</h2>
+<div class="row g-4">
     {% for project, info in data.items() %}
-    <div class="col-md-6 mb-4">
-        <div class="card h-100 shadow-sm">
-            <div class="card-body">
-                <h5 class="card-title">{{ project }}</h5>
-                <p class="card-text">{{ info['description'] }}</p>
-                <a href="{{ info['render_link'] }}" class="btn btn-outline-primary" target="_blank">Try it out</a>
-                <a href="{{ info['github_link'] }}" class="btn btn-outline-primary" target="_blank">View source code on GitHub</a>
+    <div class="col-md-6">
+        <div class="card h-100 shadow-sm border-0 hover-shadow">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title text-center fw-bold mb-3">{{ project }}</h5>
+                <p class="card-text text-muted flex-grow-1">{{ info['description'] }}</p>
+                <div class="mt-4 d-flex justify-content-center">
+                    <div class="btn-group">
+                        {% if project != 'Pomodoro timer Desktop App' %}
+                            <a href="{{ info['render_link'] }}" class="btn btn-primary btn-sm" target="_blank">Live Demo</a>
+                        {% else %}
+                            <a href="{{ info['download_link'] }}" class="btn btn-primary btn-sm" target="_blank">Download App</a>
+                        {% endif %}
+                        <a href="{{ info['github_link'] }}" class="btn btn-outline-secondary btn-sm" target="_blank">Source Code</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     {% endfor %}
 </div>
+
+<style>
+.hover-shadow:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+  transition: box-shadow 0.3s ease;
+}
+</style>
 {% endblock %}

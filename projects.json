@@ -1,7 +1,12 @@
 {
   "Password Manager": {
-    "description": "A safe site to store all your passwords.",
-    "github_link": "https://github.com/Arifrei/password-manager",
-    "render_link": ""
+    "description": "Password Manager is a web application built with Flask and Bootstrap that lets users securely store and manage their passwords. It supports adding, viewing, and deleting entries, with encrypted storage to keep sensitive information protected.",
+    "render_link": "",
+    "github_link": "https://github.com/Arifrei/password-manager"
+  },
+  "Pomodoro timer Desktop App": {
+    "description": "Pomodoro Timer is a desktop application that allows users to manage their work sessions using the Pomodoro Technique. It features a timer for 25-minute focus intervals, short and long breaks, and basic controls like start, pause, and reset.",
+    "download_link": "",
+    "github_link": "https://github.com/Arifrei/Pomodoro-App"
   }
 }
