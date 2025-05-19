@@ -1,12 +1,20 @@
 {
   "Password Manager": {
     "description": "Password Manager is a web application built with Flask and Bootstrap that lets users securely store and manage their passwords. It supports adding, viewing, and deleting entries, with encrypted storage to keep sensitive information protected.",
-    "render_link": "",
+    "type": "web_app",
+    "render_link": "https://password-manager-lulv.onrender.com/",
     "github_link": "https://github.com/Arifrei/password-manager"
   },
   "Pomodoro timer Desktop App": {
     "description": "Pomodoro Timer is a desktop application that allows users to manage their work sessions using the Pomodoro Technique. It features a timer for 25-minute focus intervals, short and long breaks, and basic controls like start, pause, and reset.",
-    "download_link": "",
+    "type": "download_link",
+    "download_link": "https://github.com/Arifrei/Pomodoro-App/releases/download/v2.0/main.exe",
     "github_link": "https://github.com/Arifrei/Pomodoro-App"
+  },
+  "Automated Cookie Clicker": {
+    "description": "A Python-based app that uses Selenium to interact with the Cookie Clicker game in a real browser. It automatically clicks the cookie and purchases the most efficient upgrades as the game progresses.",
+    "type": "download_link",
+    "download_link": "https://github.com/Arifrei/cookie-clicker-automated/releases/download/v1.0/main.exe",
+    "github_link": "https://github.com/Arifrei/cookie-clicker-automated"
   }
 }
