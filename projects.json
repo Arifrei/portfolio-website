@@ -16,5 +16,11 @@
     "type": "download_link",
     "download_link": "https://github.com/Arifrei/cookie-clicker-automated/releases/download/v1.0/main.exe",
     "github_link": "https://github.com/Arifrei/cookie-clicker-automated"
+  },
+  "Crypto Price Checker": {
+    "description": "A simple web app that fetches real-time cryptocurrency prices and stats using the Requests library and displays them for easy tracking.",
+    "type": "web_app",
+    "render_link": "https://crypto-price-check.onrender.com",
+    "github_link": "https://github.com/Arifrei/crypto-price-check"
   }
 }
