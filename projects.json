@@ -2,7 +2,7 @@
   "Password Manager": {
     "description": "Password Manager is a web application built with Flask and Bootstrap that lets users securely store and manage their passwords. It supports adding, viewing, and deleting entries, with encrypted storage to keep sensitive information protected.",
     "type": "web_app",
-    "render_link": "https://password-manager-lulv.onrender.com/",
+    "render_link": "https://password-manager-z6wp.onrender.com",
     "github_link": "https://github.com/Arifrei/password-manager"
   },
   "Pomodoro timer Desktop App": {
