@@ -13,7 +13,7 @@
                 <p class="card-text text-muted flex-grow-1">{{ info['description'] }}</p>
                 <div class="mt-4 d-flex justify-content-center">
                     <div class="btn-group">
-                        {% if info['type'] == "web_app": %}
+                        {% if info['type'] == "web_app" %}
                             <a href="{{ info['render_link'] }}" class="btn btn-primary btn-sm" target="_blank">Try It</a>
                         {% else %}
                             <a href="{{ info['download_link'] }}" class="btn btn-primary btn-sm" target="_blank">Download App</a>
@@ -29,11 +29,10 @@
         <div class="card h-100 shadow-sm border-0 hover-shadow">
             <div class="card-body d-flex flex-column">
                 <h5 class="card-title text-center fw-bold mb-3">Portfolio Website</h5>
-                <p class="card-text text-muted flex-grow-1">Yes it is this website, but I did build it from scratch. I used Flask and Bootstrap for build, and Render for deployment. Check out the source code <a href="https://github.com/Arifrei/portfolio-website" target="_blank">here.</a></p>
-                <div class="mt-4 d-flex justify-content-center">
-                    <div class="btn-group">
-                    </div>
-                </div>
+                <p class="card-text text-muted flex-grow-1">
+                    Yes it is this website, but I did build it from scratch. I used Flask and Bootstrap for build, and Render for deployment.
+                    Check out the source code <a href="https://github.com/Arifrei/portfolio-website" target="_blank">here.</a>
+                </p>
             </div>
         </div>
     </div>
@@ -43,6 +42,10 @@
 .hover-shadow:hover {
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
   transition: box-shadow 0.3s ease;
+}
+.btn-group .btn {
+  min-width: 110px;
+  text-align: center;
 }
 </style>
 {% endblock %}

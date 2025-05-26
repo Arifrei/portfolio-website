@@ -24,7 +24,7 @@ def about():
 
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
-    if request.data:
+    if request.method == "POST":
         data = request.form
     return render_template('contact.html')
 
