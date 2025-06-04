@@ -22,5 +22,10 @@
     "type": "download_link",
     "download_link": "https://github.com/Arifrei/cookie-clicker-automated/releases/download/v1.0/main.exe",
     "github_link": "https://github.com/Arifrei/cookie-clicker-automated"
+  },
+  "Weather Forecast Email Bot": {
+    "description": "A Python script that scrapes the local daily weather forecast using BeautifulSoup, formats it into a styled email, and sends it via SMTP. The script is automated with a GitHub hosted cron job for daily delivery.",
+    "type": "image",
+    "github_link": "https://github.com/Arifrei/weather-forecast"
   }
 }
