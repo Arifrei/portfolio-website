@@ -15,7 +15,7 @@
                     <div class="btn-group">
                         {% if info['type'] == "web_app" %}
                             <a href="{{ info['render_link'] }}" class="btn btn-primary btn-sm" target="_blank">Try It</a>
-                        { elif info['type'] == "image': %}
+                        {% elif info['type'] == "image': %}
                             <a href="static/images/weather_email.png" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Email Demo</a>
                         {% else %}
                             <a href="{{ info['download_link'] }}" class="btn btn-primary btn-sm" target="_blank">Download App</a>
