@@ -42,7 +42,14 @@ def contact():
         
         Message: {data['message']}
         """)
-        flash("Your message has been sent!")
+        try:
+            with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
+                smtp.login(sender_email, app_password)
+                smtp.send_message(msg)
+            flash("Your message has been sent!")
+        except Exception as e:
+            flash("There was an error sending your message.")
+            print("Email send error:", e)
         return redirect(url_for('contact'))
     return render_template('contact.html')
 
