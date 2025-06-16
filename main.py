@@ -43,7 +43,7 @@ def contact():
         Message: {data['message']}
         """)
         flash("Your message has been sent!")
-        return redirect(url_for('contact.html'))
+        return redirect(url_for('contact'))
     return render_template('contact.html')
 
 
