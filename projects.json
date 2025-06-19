@@ -11,6 +11,12 @@
     "render_link": "https://crypto-price-check.onrender.com",
     "github_link": "https://github.com/Arifrei/crypto-price-check"
   },
+  "AI FAQ Chatbot": {
+    "description": "FAQ Chatbot is an AI web app built with Python, Flask, and LangChain. It uses OpenAI’s GPT-4 to answer questions from PDFs—either a sample cryptocurrency PDF or any PDF you upload. It combines vector embeddings and retrieval-augmented generation for fast, accurate answers.",
+    "type": "web_app",
+    "render_link": "https://ai-chatbot-8teq.onrender.com",
+    "github_link": "https://github.com/Arifrei/ai_chatbot"
+  },
   "Pomodoro timer Desktop App": {
     "description": "Pomodoro Timer is a desktop application that allows users to manage their work sessions using the Pomodoro Technique. It features a timer for 25-minute focus intervals, short and long breaks, and basic controls like start, pause, and reset.",
     "type": "download_link",
