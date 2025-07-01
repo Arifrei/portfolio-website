@@ -2,36 +2,42 @@
   "Password Manager": {
     "description": "Password Manager is a web application built with Flask and Bootstrap that lets users securely store and manage their passwords. It supports adding, viewing, and deleting entries, with encrypted storage to keep sensitive information protected.",
     "type": "web_app",
+    "tags": ["Python", "Flask", "Bootstrap", "Encryption", "Web App"],
     "render_link": "https://password-manager-z6wp.onrender.com",
     "github_link": "https://github.com/Arifrei/password-manager"
   },
   "Crypto Price Checker": {
     "description": "A simple web app built with django that fetches real-time cryptocurrency prices and stats using the Requests library and displays them for easy tracking.",
     "type": "web_app",
+    "tags": ["Python", "Django", "API", "Crypto", "Web App"],
     "render_link": "https://crypto-price-check.onrender.com",
     "github_link": "https://github.com/Arifrei/crypto-price-check"
   },
   "AI FAQ Chatbot": {
-    "description": "FAQ Chatbot is an AI web app built with Python, Flask, and LangChain. It uses OpenAI’s GPT-4 to answer questions from PDFs—either a sample cryptocurrency PDF or any PDF you upload. It combines vector embeddings and retrieval-augmented generation for fast, accurate answers.",
+    "description": "FAQ Chatbot is an AI web app built with Python, Flask, and LangChain. It uses OpenAI's GPT-4 to answer questions from PDFs \u2013 either a sample cryptocurrency PDF or any PDF you upload. It combines vector embeddings and retrieval-augmented generation for fast, accurate answers.",
     "type": "web_app",
+    "tags": ["Python", "Flask", "LangChain", "OpenAI", "AI", "PDF", "Web App"],
     "render_link": "https://ai-chatbot-8teq.onrender.com",
     "github_link": "https://github.com/Arifrei/ai_chatbot"
   },
   "Pomodoro timer Desktop App": {
     "description": "Pomodoro Timer is a desktop application that allows users to manage their work sessions using the Pomodoro Technique. It features a timer for 25-minute focus intervals, short and long breaks, and basic controls like start, pause, and reset.",
     "type": "download_link",
+    "tags": ["Python", "Tkinter", "Productivity", "Desktop App", "Pomodoro"],
     "download_link": "https://github.com/Arifrei/Pomodoro-App/releases/download/v2.0/main.exe",
     "github_link": "https://github.com/Arifrei/Pomodoro-App"
   },
   "Automated Cookie Clicker": {
     "description": "A Python-based app that uses Selenium to interact with the Cookie Clicker game in a real browser. It automatically clicks the cookie and purchases the most efficient upgrades as the game progresses.",
     "type": "download_link",
+    "tags": ["Python", "Selenium", "Automation", "Game Bot", "Desktop App"],
     "download_link": "https://github.com/Arifrei/cookie-clicker-automated/releases/download/v1.0/main.exe",
     "github_link": "https://github.com/Arifrei/cookie-clicker-automated"
   },
   "Weather Forecast Email Bot": {
     "description": "A Python script that scrapes the local daily weather forecast using BeautifulSoup, formats it into a styled email, and sends it via SMTP. The script is automated with a GitHub hosted cron job for daily delivery.",
     "type": "image",
+    "tags": ["Python", "BeautifulSoup", "Email", "SMTP", "Cron Job", "Automation"],
     "github_link": "https://github.com/Arifrei/weather-forecast"
   }
 }
