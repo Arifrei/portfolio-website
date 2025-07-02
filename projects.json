@@ -10,6 +10,7 @@
     "description": "A simple web app built with django that fetches real-time cryptocurrency prices and stats using the Requests library and displays them for easy tracking.",
     "type": "web_app",
     "tags": ["Python", "Django", "API", "Crypto", "Web App"],
+    "image_url": "static/images/crypto.png",
     "render_link": "https://crypto-price-check.onrender.com",
     "github_link": "https://github.com/Arifrei/crypto-price-check"
   },
@@ -17,6 +18,7 @@
     "description": "FAQ Chatbot is an AI web app built with Python, Flask, and LangChain. It uses OpenAI's GPT-4 to answer questions from PDFs \u2013 either a sample cryptocurrency PDF or any PDF you upload. It combines vector embeddings and retrieval-augmented generation for fast, accurate answers.",
     "type": "web_app",
     "tags": ["Python", "Flask", "LangChain", "OpenAI", "AI", "PDF", "Web App"],
+    "image_url": "static/images/chatbot.png",
     "render_link": "https://ai-chatbot-8teq.onrender.com",
     "github_link": "https://github.com/Arifrei/ai_chatbot"
   },

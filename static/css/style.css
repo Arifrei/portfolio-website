@@ -145,6 +145,7 @@ nav a.active {
   align-items: start;
 }
 
+/* Clean project cards with no image */
 .project-card {
   background-color: var(--card-bg);
   border-radius: var(--radius);
@@ -154,6 +155,7 @@ nav a.active {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 100%;
   position: relative;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
 .project-card:hover {
@@ -162,20 +164,13 @@ nav a.active {
   box-shadow: 0 12px 24px rgba(67, 56, 202, 0.2);
 }
 
-.project-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
 .project-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem;
   flex-grow: 1;
-  position: relative;
-  z-index: 1;
+  color: var(--text-dark);
 }
 
 .project-content h5 {
@@ -191,6 +186,7 @@ nav a.active {
   flex-grow: 1;
 }
 
+/* Tags */
 .badge {
   background-color: var(--accent);
   color: white;
@@ -201,6 +197,7 @@ nav a.active {
   display: inline-block;
 }
 
+/* Buttons */
 .btn-group {
   display: flex;
   justify-content: center;
@@ -239,6 +236,7 @@ nav a.active {
   color: white;
 }
 
+/* Animation */
 .fade-in {
   opacity: 0;
   animation: fadeIn 0.8s ease-in forwards;
@@ -250,8 +248,64 @@ nav a.active {
   }
 }
 
+/* Responsive */
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--bg-white);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #cbd5e1;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: #fff;
+  color: var(--text-dark);
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.form-actions {
+  text-align: center;
+}
+
+.alert {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 500;
 }
