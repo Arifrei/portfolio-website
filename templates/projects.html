@@ -20,7 +20,7 @@
                 {% if info['type'] == "web_app" %}
                 <a href="{{ info['render_link'] }}" class="btn btn-primary" target="_blank">Try It</a>
                 {% elif info['type'] == "image" %}
-                <a href="{{ url_for('static', filename='images/weather_email.png') }}" class="btn btn-primary" target="_blank">View</a>
+                <a href="{{ url_for('static', filename='images/weather_email.png') }}" class="btn btn-primary" target="_blank">Email Demo</a>
                 {% else %}
                 <a href="{{ info['download_link'] }}" class="btn btn-primary" target="_blank">Download</a>
                 {% endif %}
