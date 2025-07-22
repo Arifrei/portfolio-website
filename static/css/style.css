@@ -309,3 +309,46 @@ nav a.active {
   text-align: center;
   font-weight: 500;
 }
+/* Button Ripple Effect */
+.button, .btn {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: transform 0.18s cubic-bezier(.68,-0.6,.32,1.6);
+}
+.button:active, .btn:active {
+  transform: scale(0.97);
+}
+.button .ripple, .btn .ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 0.5s linear;
+  background: rgba(20, 184, 166, 0.18);
+  pointer-events: none;
+  z-index: 2;
+}
+@keyframes ripple {
+  to {
+    transform: scale(2.8);
+    opacity: 0;
+  }
+}
+
+/* Optional: Bouncy hover for buttons */
+.button:hover, .btn:hover {
+  transform: scale(1.05);
+}
+
+/* Fade-in/slide-in for .fade-in elements (already in main.js) */
+
+/* Animate project cards (handled by JS, just smoothness here) */
+.project-card {
+  will-change: opacity, transform;
+}
+
+/* Contact Form - Animate label color */
+.form-group.focused label {
+  color: var(--accent);
+  letter-spacing: 0.03em;
+}
