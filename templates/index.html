@@ -1,17 +1,61 @@
 {% extends "base.html" %}
-{% block title %}Home - My Portfolio{% endblock %}
+{% block title %}Ari Freilich - Portfolio{% endblock %}
 
 {% block content %}
-<section class="hero fade-in">
-  <div class="hero-text">
-    <h1>Hi, My name is Ari Freilich</h1>
-    <p>I’m a Python developer with a focus on building clean, maintainable solutions — from scripts to web apps.</p>
-    <div class="button-wrapper">
-      <button class="button" onclick="location.href='{{ url_for('show_projects') }}'">Check Out My Work</button>
+<section id="hero" class="hero-shell">
+    <div class="hero-shell-inner">
+        <h1>Hey, I'm <span class="accent-text">Ari Freilich</span></h1>
+        <h2>Python Developer • Automation • Clean Code</h2>
+        <p>I turn ideas into reliable, elegant code.<br>Check out my latest work or drop a message!</p>
+        <a href="#projects" class="hero-btn">See Projects</a>
     </div>
-  </div>
-  <div class="hero-image">
-    <img src="{{ url_for('static', filename='images/developer.jpeg') }}" alt="Coding Illustration">
-  </div>
+</section>
+
+<section id="projects" class="projects-shell">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+        {% for project, info in data.items() %}
+        <div class="project-card">
+            <div class="project-content">
+                <h5>{{ project }}</h5>
+                <p>{{ info['description'] }}</p>
+                {% if info.get('tags') %}
+                <div class="tags">
+                    {% for tag in info['tags'] %}
+                    <span class="badge">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <div class="btn-group">
+                    {% if info['type'] == "web_app" %}
+                    <a href="{{ info['render_link'] }}" class="btn btn-primary" target="_blank">Try It</a>
+                    {% elif info['type'] == "image" %}
+                    <a href="{{ url_for('static', filename='images/weather_email.png') }}" class="btn btn-primary" target="_blank">Email Demo</a>
+                    {% else %}
+                    <a href="{{ info['download_link'] }}" class="btn btn-primary" target="_blank">Download</a>
+                    {% endif %}
+                    <a href="{{ info['github_link'] }}" class="btn btn-outline-secondary" target="_blank">Source Code</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section id="about" class="about-shell">
+    <h2>About Me</h2>
+    <p>
+        I'm Ari Freilich, passionate about automation, web apps, and clean solutions.<br>
+        <strong>Stack:</strong> Python, Flask, Django, JS, APIs, Automation<br>
+        <strong>Current Focus:</strong> Cloud, AI, DevOps
+    </p>
+</section>
+
+<section id="contact" class="contact-shell">
+    <h2>Contact</h2>
+    <p>
+        Let’s work together!<br>
+        Email: <a href="mailto:your@email.com">your@email.com</a>
+    </p>
 </section>
 {% endblock %}

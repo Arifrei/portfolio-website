@@ -4,15 +4,24 @@ from email.message import EmailMessage
 from dotenv import load_dotenv
 import json
 import os
+from datetime import datetime
 
 load_dotenv()
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('FLASK_KEY')
 
+@app.context_processor
+def inject_now():
+    return {'year': datetime.now().year}
+
+
 @app.route("/")
 def home():
-    return render_template('index.html')
+    with open("projects.json", "r") as file:
+        data = json.load(file)
+    return render_template('index.html', data=data)
+
 
 @app.route("/projects")
 def show_projects():
