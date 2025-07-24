@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
     circle.style.left = `${event.clientX - button.getBoundingClientRect().left - radius}px`;
     circle.style.top = `${event.clientY - button.getBoundingClientRect().top - radius}px`;
 
-    // Remove old ripple
     const ripple = button.querySelector('.ripple');
     if (ripple) {
       ripple.remove();
@@ -35,27 +34,17 @@ document.addEventListener('DOMContentLoaded', function () {
     btn.addEventListener('click', createRipple);
   });
 
-  // Project card animation (if present)
-  const cards = document.querySelectorAll('.project-card');
-  cards.forEach((card, idx) => {
-    card.style.opacity = 0;
-    card.style.transform = 'translateY(24px)';
-    setTimeout(() => {
-      card.style.transition = 'opacity 0.7s cubic-bezier(.77,0,.18,1), transform 0.7s';
-      card.style.opacity = 1;
-      card.style.transform = 'translateY(0)';
-    }, 200 + idx * 130);
-  });
-
-  // Contact form input animation (label highlight on focus)
-  document.querySelectorAll('.contact-form input, .contact-form textarea').forEach(input => {
-    input.addEventListener('focus', e => {
-      e.target.closest('.form-group').classList.add('focused');
+  // SMOOTH SCROLL FOR "See Projects" BUTTON
+  const seeProjectsBtn = document.querySelector('.hero-btn[href="#projects"]');
+  if (seeProjectsBtn) {
+    seeProjectsBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      const section = document.querySelector('#projects');
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     });
-    input.addEventListener('blur', e => {
-      e.target.closest('.form-group').classList.remove('focused');
-    });
-  });
+  }
 
   // NAVBAR SMOOTH SCROLL AND ACTIVE HIGHLIGHT
   document.querySelectorAll('.nav-link').forEach(link => {
@@ -92,8 +81,6 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', setActiveLink);
   setActiveLink();
 
-  // --- HERO SECTION JS INTERACTIVITY ---
-
   // Typewriter reveal for hero title
   const heroTitle = document.getElementById('hero-title');
   if (heroTitle) {
@@ -104,23 +91,30 @@ document.addEventListener('DOMContentLoaded', function () {
       if (i < text.length) {
         heroTitle.textContent += text.charAt(i);
         i++;
-        setTimeout(typeWriter, 32); // adjust typing speed here (ms)
+        setTimeout(typeWriter, 32);
       }
     }
-    setTimeout(typeWriter, 200); // delay before typing starts
+    setTimeout(typeWriter, 200);
   }
 
-  // Subtle hero background animation on mouse move
-  const heroSection = document.getElementById('hero');
-  if (heroSection) {
-    heroSection.addEventListener('mousemove', function (e) {
-      const { width, height, left, top } = heroSection.getBoundingClientRect();
-      const x = ((e.clientX - left) / width - 0.5) * 16; // max 8px left/right
-      const y = ((e.clientY - top) / height - 0.5) * 12; // max 6px up/down
-      heroSection.style.backgroundPosition = `${60 + x}% ${50 + y}%`;
+  // CARD FLIP INTERACTIVITY
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', function (e) {
+      // Only flip if clicking the front/back, not a link or button
+      if (
+        e.target.classList.contains('btn') ||
+        e.target.classList.contains('button') ||
+        e.target.tagName === 'A'
+      ) return;
+      this.classList.toggle('flipped');
     });
-    heroSection.addEventListener('mouseleave', function () {
-      heroSection.style.backgroundPosition = '';
+    card.addEventListener('keypress', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        this.classList.toggle('flipped');
+      }
     });
-  }
+    card.addEventListener('mouseleave', function () {
+      this.classList.remove('flipped');
+    });
+  });
 });

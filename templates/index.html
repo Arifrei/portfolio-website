@@ -11,30 +11,39 @@
     </div>
 </section>
 
-<section id="projects" class="projects-shell">
+<section id="projects" class="projects-shell fade-in">
     <h2>Projects</h2>
     <div class="projects-grid">
         {% for project, info in data.items() %}
-        <div class="project-card">
-            <div class="project-content">
-                <h5>{{ project }}</h5>
-                <p>{{ info['description'] }}</p>
-                {% if info.get('tags') %}
-                <div class="tags">
-                    {% for tag in info['tags'] %}
-                    <span class="badge">{{ tag }}</span>
-                    {% endfor %}
+        <div class="project-card" tabindex="0">
+            <div class="project-card-inner">
+                <!-- FRONT OF CARD -->
+                <div class="project-card-front">
+                    <div class="project-title">{{ project }}</div>
+                    <div style="flex:1"></div>
+                    <div class="tags">
+                        {% if info.get('tags') %}
+                            {% for tag in info['tags'] %}
+                            <span class="badge">{{ tag }}</span>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    <div style="flex:2"></div>
                 </div>
-                {% endif %}
-                <div class="btn-group">
-                    {% if info['type'] == "web_app" %}
-                    <a href="{{ info['render_link'] }}" class="btn btn-primary" target="_blank">Try It</a>
-                    {% elif info['type'] == "image" %}
-                    <a href="{{ url_for('static', filename='images/weather_email.png') }}" class="btn btn-primary" target="_blank">Email Demo</a>
-                    {% else %}
-                    <a href="{{ info['download_link'] }}" class="btn btn-primary" target="_blank">Download</a>
-                    {% endif %}
-                    <a href="{{ info['github_link'] }}" class="btn btn-outline-secondary" target="_blank">Source Code</a>
+                <!-- BACK OF CARD -->
+                <div class="project-card-back">
+                    <div class="back-title">{{ project }}</div>
+                    <div class="desc-center">{{ info['description'] }}</div>
+                    <div class="btn-group">
+                        {% if info['type'] == "web_app" %}
+                        <a href="{{ info['render_link'] }}" class="btn btn-primary" target="_blank">Try It</a>
+                        {% elif info['type'] == "image" %}
+                        <a href="{{ url_for('static', filename='images/weather_email.png') }}" class="btn btn-primary" target="_blank">Email Demo</a>
+                        {% else %}
+                        <a href="{{ info['download_link'] }}" class="btn btn-primary" target="_blank">Download</a>
+                        {% endif %}
+                        <a href="{{ info['github_link'] }}" class="btn btn-outline-secondary" target="_blank">Source Code</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -42,16 +51,17 @@
     </div>
 </section>
 
-<section id="about" class="about-shell section-centered">
+<section id="about" class="about-shell section-centered fade-in">
     <h2>About Me</h2>
     <p>
         I’m a Python developer passionate about building clean, reliable web apps and automation tools. I focus on clear code and continuous learning, with hands-on projects in web development, scripting, and automation.<br>
         <strong>Stack:</strong> Python, Flask, Django, JS, APIs, Automation<br>
         <strong>Current Focus:</strong> Cloud, AI, DevOps
     </p>
+    <a href="{{ url_for('static', filename='Ari_Freilich_Resume.pdf') }}" class="btn btn-primary" download>Download My Resume</a>
 </section>
 
-<section id="contact" class="contact-shell section-centered">
+<section id="contact" class="contact-shell section-centered fade-in">
     <h2>Contact</h2>
     <p>
         Let’s work together!<br>
