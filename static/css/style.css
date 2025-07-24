@@ -119,8 +119,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-
-/* HERO */
 .hero-shell {
   padding: 4rem 0 2.8rem 0;
   background: none;
@@ -188,7 +186,7 @@ body {
   z-index: 1;
 }
 
-/* PROJECTS */
+
 .projects-shell {
   padding: 3.2rem 0 2.5rem 0;
   background: none;
@@ -217,7 +215,6 @@ body {
   padding: 0.5rem 0;
 }
 
-/* Card Flip Styles: vertical rectangle, name top, tags center, back description center, buttons bottom */
 .project-card {
   position: relative;
   perspective: 1200px;
@@ -269,7 +266,6 @@ body {
   padding: 0;
 }
 
-/* Card Front: Project name on top, tags vertically and horizontally centered */
 .project-card-front {
   z-index: 2;
   color: var(--accent2);
@@ -288,7 +284,6 @@ body {
   font-size: 1.18rem;
   font-weight: 800;
   text-align: center;
-  /* always top */
 }
 .project-card-front {
   display: flex;
@@ -353,8 +348,6 @@ body {
   margin-top: auto;
   margin-bottom: 0.2rem;
 }
-
-/* Hover/active shadow and color */
 .project-card:hover .project-card-front,
 .project-card.flipped .project-card-front,
 .project-card:focus-within .project-card-front,
@@ -494,7 +487,6 @@ body {
   text-decoration: underline;
 }
 
-/* Responsive */
 @media (max-width: 900px) {
   .app-shell {
     flex-direction: column;

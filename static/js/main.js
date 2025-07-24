@@ -1,6 +1,4 @@
-// main.js
 document.addEventListener('DOMContentLoaded', function () {
-  // Fade-in for all .fade-in elements (staggered)
   const fadeElements = document.querySelectorAll('.fade-in');
   fadeElements.forEach((el, i) => {
     el.style.opacity = 0;
@@ -12,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 160 + i * 150);
   });
 
-  // Button ripple effect for .button and .btn
   function createRipple(event) {
     const button = event.currentTarget;
     const circle = document.createElement('span');
@@ -34,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
     btn.addEventListener('click', createRipple);
   });
 
-  // SMOOTH SCROLL FOR "See Projects" BUTTON
   const seeProjectsBtn = document.querySelector('.hero-btn[href="#projects"]');
   if (seeProjectsBtn) {
     seeProjectsBtn.addEventListener('click', function (e) {
@@ -46,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // NAVBAR SMOOTH SCROLL AND ACTIVE HIGHLIGHT
   document.querySelectorAll('.nav-link').forEach(link => {
     const href = link.getAttribute('href');
     if (href && href.startsWith('#')) {
@@ -63,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
   function setActiveLink() {
-    let scrollPos = window.scrollY + 120; // adjust offset if you have a fixed header
+    let scrollPos = window.scrollY + 120;
     sections.forEach(section => {
       if (
         scrollPos >= section.offsetTop &&
@@ -81,7 +76,6 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', setActiveLink);
   setActiveLink();
 
-  // Typewriter reveal for hero title
   const heroTitle = document.getElementById('hero-title');
   if (heroTitle) {
     const text = heroTitle.textContent;
@@ -97,10 +91,8 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(typeWriter, 200);
   }
 
-  // CARD FLIP INTERACTIVITY
   document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('click', function (e) {
-      // Only flip if clicking the front/back, not a link or button
       if (
         e.target.classList.contains('btn') ||
         e.target.classList.contains('button') ||
