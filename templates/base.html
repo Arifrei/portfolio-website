@@ -10,19 +10,20 @@
 </head>
 <body>
 <div class="app-shell">
-    <aside class="sidebar">
+    <aside class="sidebar" role="navigation" aria-label="Main navigation">
         <div class="sidebar-header">
             <img src="{{ url_for('static', filename='images/avatar.png') }}" alt="Ari Freilich" class="sidebar-avatar">
             <h1 class="sidebar-name">Ari Freilich</h1>
         </div>
         <nav class="sidebar-nav">
-            <a href="#hero" class="nav-link">Home</a>
-            <a href="#projects" class="nav-link">Projects</a>
-            <a href="#about" class="nav-link">About</a>
-            <a href="#contact" class="nav-link">Contact</a>
+            <a href="#hero" class="nav-link" aria-label="Home">Home</a>
+            <a href="#projects" class="nav-link" aria-label="Projects">Projects</a>
+            <a href="#about" class="nav-link" aria-label="About">About</a>
+            <a href="#contact" class="nav-link" aria-label="Contact">Contact</a>
         </nav>
         <div class="sidebar-footer">
-            <a href="https://github.com/arifreilich" target="_blank" title="GitHub">
+            <a href="https://github.com/arifreilich" target="_blank" title="GitHub" aria-label="GitHub">
+                <!-- SVG unchanged -->
                 <svg style="vertical-align:middle" width="22" height="22" viewBox="0 0 16 16" fill="#6C63FF"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
 -.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
@@ -36,10 +37,11 @@
         {% block content %}{% endblock %}
         <footer class="footer">
             <div>
-                © 2025 Ari Freilich &middot; <a href="mailto:your@email.com">Contact</a>
+                © 2025 Ari Freilich &middot; <a href="mailto:freilicharon@gmail.com">Contact</a>
             </div>
         </footer>
     </main>
 </div>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>

@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (ripple) {
       ripple.remove();
     }
-
     button.appendChild(circle);
   }
   document.querySelectorAll('.button, .btn').forEach(btn => {
@@ -57,4 +56,71 @@ document.addEventListener('DOMContentLoaded', function () {
       e.target.closest('.form-group').classList.remove('focused');
     });
   });
+
+  // NAVBAR SMOOTH SCROLL AND ACTIVE HIGHLIGHT
+  document.querySelectorAll('.nav-link').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const section = document.querySelector(href);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    }
+  });
+
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  function setActiveLink() {
+    let scrollPos = window.scrollY + 120; // adjust offset if you have a fixed header
+    sections.forEach(section => {
+      if (
+        scrollPos >= section.offsetTop &&
+        scrollPos < section.offsetTop + section.offsetHeight
+      ) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${section.id}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }
+  window.addEventListener('scroll', setActiveLink);
+  setActiveLink();
+
+  // --- HERO SECTION JS INTERACTIVITY ---
+
+  // Typewriter reveal for hero title
+  const heroTitle = document.getElementById('hero-title');
+  if (heroTitle) {
+    const text = heroTitle.textContent;
+    heroTitle.textContent = '';
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        heroTitle.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 32); // adjust typing speed here (ms)
+      }
+    }
+    setTimeout(typeWriter, 200); // delay before typing starts
+  }
+
+  // Subtle hero background animation on mouse move
+  const heroSection = document.getElementById('hero');
+  if (heroSection) {
+    heroSection.addEventListener('mousemove', function (e) {
+      const { width, height, left, top } = heroSection.getBoundingClientRect();
+      const x = ((e.clientX - left) / width - 0.5) * 16; // max 8px left/right
+      const y = ((e.clientY - top) / height - 0.5) * 12; // max 6px up/down
+      heroSection.style.backgroundPosition = `${60 + x}% ${50 + y}%`;
+    });
+    heroSection.addEventListener('mouseleave', function () {
+      heroSection.style.backgroundPosition = '';
+    });
+  }
 });
