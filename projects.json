@@ -3,28 +3,28 @@
     "description": "Password Manager is a web application built with Flask and Bootstrap that lets users securely store and manage their passwords. It supports adding, viewing, and deleting entries, with encrypted storage to keep sensitive information protected.",
     "type": "web_app",
     "tags": ["Python", "Flask", "Bootstrap", "Encryption", "Web App"],
-    "render_link": "https://password-manager-z6wp.onrender.com",
+    "render_link": "https://password-manager-0rbt.onrender.com",
     "github_link": "https://github.com/Arifrei/password-manager"
   },
   "Crypto Price Checker": {
     "description": "A simple web app built with django that fetches real-time cryptocurrency prices and stats using the Requests library and displays them for easy tracking.",
     "type": "web_app",
     "tags": ["Python", "Django", "API", "Crypto", "Web App"],
-    "render_link": "https://crypto-price-check.onrender.com",
+    "render_link": "https://crypto-price-check-qfiv.onrender.com",
     "github_link": "https://github.com/Arifrei/crypto-price-check"
   },
   "AI FAQ Chatbot": {
     "description": "FAQ Chatbot is an AI web app built with Python, Flask, and LangChain. It uses OpenAI's GPT-4 to answer questions from PDFs \u2013 either a sample cryptocurrency PDF or any PDF you upload. It combines vector embeddings and retrieval-augmented generation for fast, accurate answers.",
     "type": "web_app",
     "tags": ["Python", "Flask", "LangChain", "OpenAI", "AI", "PDF", "Web App"],
-    "render_link": "https://ai-chatbot-8teq.onrender.com",
+    "render_link": "https://ai-chatbot-bufp.onrender.com",
     "github_link": "https://github.com/Arifrei/ai_chatbot"
   },
   "File Organizer": {
     "description": "A web app that organizes files in any folder into categorized subfolders by type, with one-click undo. Built with Python (Flask).",
     "type": "web_app",
     "tags": ["Python", "Flask", "Web App", "File Organizer"],
-    "render_link": "https://file-organizer-dxyb.onrender.com",
+    "render_link": "https://file-organizer-2zlj.onrender.com",
     "github_link": "https://github.com/Arifrei/file_organizer"
   },
   "Pomodoro timer Desktop App": {
